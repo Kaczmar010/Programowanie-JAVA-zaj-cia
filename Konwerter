@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class KonwerterCzasu {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Wybierz rodzaj konwersji:");
+        System.out.println("1. Godziny na minuty");
+        System.out.println("2. Minuty na godziny");
+
+        int wybor = scanner.nextInt();
+
+        switch (wybor) {
+            case 1:
+                konwertujGodzinyNaMinuty();
+                break;
+            case 2:
+                konwertujMinutyNaGodziny();
+                break;
+            default:
+                System.out.println("Nieprawidłowy wybór.");
+        }
+    }
+
+    private static void konwertujGodzinyNaMinuty() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Podaj liczbę godzin: ");
+        double godziny = scanner.nextDouble();
+
+        double minuty = godziny * 60;
+
+        System.out.println(godziny + " godzin to " + minuty + " minut.");
+    }
+
+    private static void konwertujMinutyNaGodziny() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Podaj liczbę minut: ");
+        double minuty = scanner.nextDouble();
+
+        double godziny = minuty / 60;
+
+        System.out.println(minuty + " minut to " + godziny + " godzin.");
+    }
+}
